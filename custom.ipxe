@@ -1,12 +1,23 @@
 #!ipxe
 ###
-### netboot.xyz-custom menu
+### netboot.xyz-custom menu example
 ###
 
-:start
-echo Hello world!
-sleep 10
+:custom
+clear custom_choice
+menu This is a Test Menu
+item --gap This is the first sub menu
+item option_one ${space} Loading a kernel and initrd
+item --gap This is a second sub menu
+item option_three ${space} Loads another custom sub menu
+item option_four ${space} This is option four
+choose custom_choice || goto custom_exit
+echo ${cls}
+goto ${custom_choice}
 goto custom_exit
 
-:custom_exit
-exit 0
+:option_one
+kernel nfs://10.10.10.220/mnt/user/pxe_isos/hp-upd/pxe/spp2018110/vmlinuz
+initrd nfs://10.10.10.220/mnt/user/pxe_isos/hp-upd/pxe/spp2018110/initrd
+imgargs vmlinuz put_kernel_img_args_here
+boot || goto custom_exit
