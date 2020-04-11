@@ -16,7 +16,7 @@ goto custom_exit
 
 :option_one
 kernel http://10.10.10.222/hp-upd/pxe/spp2018110/vmlinuz
-initrd http://10.10.10.222/mnt/user/pxe_isos/hp-upd/pxe/spp2018110/initrd
+initrd http://10.10.10.222/hp-upd/pxe/spp2018110/initrd
 imgargs vmlinuz put_kernel_img_args_here
 boot || goto custom_exit
 
