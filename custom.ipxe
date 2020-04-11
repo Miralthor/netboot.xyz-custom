@@ -18,18 +18,18 @@ goto custom_exit
 
 :option_one
 kernel http://10.10.10.222/hp-upd/pxe/spp2018110/vmlinuz
-initrd http://10.10.10.222/hp-upd/pxe/spp2018110/initrd
+initrd http://10.10.10.222/hp-upd/pxe/spp2018110/initrd.iso
 imgargs vmlinuz put_kernel_img_args_here
 boot || goto custom_exit
 
 :option_two
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd http://10.10.10.222/proxmox-ve_6.1-2
+initrd http://10.10.10.222/proxmox-ve_6.1-2 raw iso
 boot || goto custom_exit
 
 :option_three
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd http://10.10.10.222/proxmox-mailgateway_6.1-1
+initrd http://10.10.10.222/proxmox-mailgateway_6.1-1.iso
 boot || goto custom_exit
 
 :custom_exit
