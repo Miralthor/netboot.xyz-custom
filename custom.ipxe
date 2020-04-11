@@ -15,8 +15,8 @@ goto ${custom_choice}
 goto custom_exit
 
 :option_one
-kernel nfs://10.10.10.220/mnt/user/pxe_isos/hp-upd/pxe/spp2018110/vmlinuz
-initrd nfs://10.10.10.220/mnt/user/pxe_isos/hp-upd/pxe/spp2018110/initrd
+kernel http://10.10.10.222/hp-upd/pxe/spp2018110/vmlinuz
+initrd http://10.10.10.222/mnt/user/pxe_isos/hp-upd/pxe/spp2018110/initrd
 imgargs vmlinuz put_kernel_img_args_here
 boot || goto custom_exit
 
