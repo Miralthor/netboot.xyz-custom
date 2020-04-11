@@ -23,7 +23,7 @@ imgargs vmlinuz put_kernel_img_args_here
 boot || goto custom_exit
 
 :option_two
-kernel http://10.10.10.222/proxmox/linux26
+kernel http://10.10.10.222/proxmox/vmlinuz
 initrd http://10.10.10.222/proxmox/initrd.iso.img
 append vga=791 video=vesafb:ywrap,mtrr ramdisk_size=16777216 rw quiet splash=silent
 boot || goto custom_exit
